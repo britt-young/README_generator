@@ -44,7 +44,7 @@ inquirer
       choices: [
         "A",
         "B",
-        "C",
+        "C"
       ]
     },
     {
@@ -65,9 +65,8 @@ inquirer
   ])
 
   .then((data) => {
-    const fileName = `${data.title.toLowerCase().split('').join('')}.json`
-      fs.writeFile(fileName, JSON.stringify{data, null, '\t'}, (err)=>err?console.error(err):console.log("success!"))
-  });
+      fs.writeFile("file name here", content, (err)=>err?console.error(err):console.log("success!")),
+  })
 
 //log.txt file to store data????
 // TODO: Create a function to write README file
