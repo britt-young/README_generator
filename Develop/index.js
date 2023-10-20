@@ -17,44 +17,53 @@ inquirer
     },
     {
       type: "table of contents",
-      message: "Please provide a list of contents within your README file (optional).",
-      title: "contents",
+      message: "Please select what you want to include in your README table of contents (optional).",
+      choices: [
+        "Description",
+        "Installation",
+        "Usage",
+        "License",
+        "Contributions",
+        "Test",
+        "None"
+      ]
     },
     {
       type: "installation",
       message: "Please provide intallation instructions needed.",
-      name: "install",
+      install: "install",
     },
     {
       type: "usage",
       message: "Please provide relevant usage information.",
-      text: "usage",
+      usage: "usage",
     },
     {
       type: "license",
       message: "What licensing is being used?",
-      name: "license",
+      license: "license",
     },
     {
       type: "contributions",
       message: "Please include all contributors and contribution guidelines.",
-      text: "contributions",
+      contributions: "contributions",
     },
     {
       type: "tests",
       message: "Inlcude all tests conducted for your project with necessary instructions.",
-      name: "tests",
+      tests: "tests",
     },
     {
       type: "questions",
       message: "ADDITIONAL QUESTIONS NEED TO BE ADDED HERE!!!!",
-      name: "questions",
+      questions: "questions",
     },
   ])
 
-  .then((response) =>
-
-  );
+  .then((data) => {
+    const fileName = `${data.name.toLowerCase().split('').join('')}.json`
+      fs.writeFile(fileName, JSON.stringify{data, null, '\t'}, (err)=>err?console.error(err):console.log("success!"))
+  });
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
