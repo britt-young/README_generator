@@ -41,7 +41,11 @@ inquirer
     {
       type: "license",
       message: "What licensing is being used?",
-      license: "license",
+      choices: [
+        "A",
+        "B",
+        "C",
+      ]
     },
     {
       type: "contributions",
@@ -60,10 +64,11 @@ inquirer
     },
   ])
 
-  .then((data) => {
-    const fileName = `${data.name.toLowerCase().split('').join('')}.json`
-      fs.writeFile(fileName, JSON.stringify{data, null, '\t'}, (err)=>err?console.error(err):console.log("success!"))
-  });
+//   .then((data) => {
+//     const fileName = `${data.name.toLowerCase().split('').join('')}.json`
+//       fs.writeFile(fileName, JSON.stringify{data, null, '\t'}, (err)=>err?console.error(err):console.log("success!"))
+//   });
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
