@@ -58,14 +58,19 @@ inquirer
     },
     {
       type: "questions",
-      message: "ADDITIONAL QUESTIONS NEED TO BE ADDED HERE!!!!",
-      questions: "questions",
+      message: "Please enter your GitHub username",
+      username: "username",
+    },
+    {
+      type: "questions",
+      message: "Please enter your email address",
+      email: "email",
     },
   ])
-
+//replace "content"
   .then((data) => {
       fs.writeFile("file name here", content, (err)=>err?console.error(err):console.log("success!")),
-  })
+  });
 
 //log.txt file to store data????
 // TODO: Create a function to write README file
