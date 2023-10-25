@@ -27,7 +27,7 @@ const questions = inquirer.prompt([
       validate: function (input) {
         return input !== '' ? true : 'Select "none" if you do not wish to include a Table of Contents';
       },
-    name: "table of contents",
+    name: "tableOfContents",
     choices: [
       "Installation",
       "Usage",
@@ -43,7 +43,7 @@ const questions = inquirer.prompt([
     validate: function (input) {
       return input !== '' ? true : 'Installation cannot be empty';
     },
-    name: "install",
+    name: "installation",
   },
   {
     type: "input",
@@ -60,7 +60,7 @@ const questions = inquirer.prompt([
     validate: function (input) {
       return input !== '' ? true : 'Select "none" if you do not wish to include a license';
     },
-    name: "licensing",
+    name: "license",
     choices: [
       "MIT License",
       "GNU General Public License v3",
@@ -102,8 +102,9 @@ const questions = inquirer.prompt([
     name: "email",
   },
 ]);
-inquirer.prompt(questions).then((answers) => {
-  // Construct the README content using the user's inputs
+
+function writeToFile(answers) {
+  // Construct the README content in markdown using the user's inputs
   const readmeContent = `
   # ${answers.title}
   
@@ -140,14 +141,16 @@ inquirer.prompt(questions).then((answers) => {
       console.log("README created successfully!");
     }
   });
-});
+}
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+inquirer.prompt(questions).then((answers) => {
+  writeToFile(answers);
+});
 
-// TODO: Create a function to initialize app
-function init() {}
+// // TODO: Create a function to initialize app
+// function init() {}
 
-// Function call to initialize app
-init();
+// // Function call to initialize app
+// init();
