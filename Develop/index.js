@@ -19,7 +19,6 @@ inquirer
       type: "table of contents",
       message: "Please select what you want to include in your README table of contents (optional).",
       choices: [
-        "Description",
         "Installation",
         "Usage",
         "License",
@@ -35,26 +34,26 @@ inquirer
     },
     {
       type: "usage",
-      message: "Please provide relevant usage information.",
+      message: "Please provide relevant usage information including examples and/or screenshots.",
       usage: "usage",
     },
     {
       type: "license",
       message: "What licensing is being used?",
       choices: [
-        "A",
-        "B",
-        "C"
+        "MIT License",
+        "GNU General Public License v3",
+        "None"
       ]
     },
     {
       type: "contributions",
-      message: "Please include all contributors and contribution guidelines.",
+      message: "Please include all contributors and contribution guidelines to include GitHub profiles and all third-party assets.",
       contributions: "contributions",
     },
     {
       type: "tests",
-      message: "Inlcude all tests conducted for your project with necessary instructions.",
+      message: "Provide examples on how to run your test code and the expected results.",
       tests: "tests",
     },
     {
