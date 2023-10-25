@@ -1,8 +1,9 @@
-// TODO: Include packages needed for this application
+//call in packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
 
-// TODO: Create an array of questions for user input
+//"questions" array of questions for user input necessary to build README file
 const questions = [
   {
     type: "input",
@@ -105,38 +106,10 @@ const questions = [
   },
 ];
 
+//create function to write README file and display console message when completed
 function writeToFile(answers) {
-  // Construct the README content in markdown using the user's inputs
-  const readmeContent = `
-  # ${answers.title}
-  
-  ## Description
-  ${answers.description}
-  
-  ## Table of Contents
-  ${answers.tableOfContents.join("\n")}
-  
-  ## Installation
-  ${answers.installation || "No installation instructions provided."}
-  
-  ## Usage
-  ${answers.usage || "No usage information provided."}
-  
-  ## License
-  ${answers.license || "No license information provided."}
-  
-  ## Contributions
-  ${answers.contributions || "No contribution information provided."}
-  
-  ## Tests
-  ${answers.tests || "No test information provided."}
-  
-  ## Questions
-  GitHub: [${answers.username}](https://github.com/${answers.username})
-  Email: ${answers.email}
-    `;
-
-  fs.writeFile("README.md", readmeContent, (err) => {
+  const markdownContent = generateMarkdown(answers);
+  fs.writeFile("README.md", markdownContent, (err) => {
     if (err) {
       console.error(err);
     } else {
@@ -145,13 +118,7 @@ function writeToFile(answers) {
   });
 }
 
-// TODO: Create a function to write README file
+// prompt user with questions
 inquirer.prompt(questions).then((answers) => {
   writeToFile(answers);
 });
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
