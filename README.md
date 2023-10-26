@@ -14,7 +14,8 @@ User must install the 'inquirer' package by typing "npm i inquirer@8.2.4" into t
 * Run the command "node index.js" to initiate the program, respond to the prompts, and generate your README file
 
 
-    ![DemoVideo](./Develop/assets/Demo_screenshot.png)
+    ![UsageScreenshot](./Develop/assets/Demo_screenshot.png)
+    ![DemoVideo](./Develop/assets/Demo.webm)
    
 
 ## Credits
