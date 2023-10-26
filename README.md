@@ -14,11 +14,8 @@ User must install the 'inquirer' package by typing "npm i inquirer@8.2.4" into t
 * Run the command "node index.js" to initiate the program, respond to the prompts, and generate your README file
 
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+    ![DemoVideo](./Develop/assets/Demo_screenshot.png)
+   
 
 ## Credits
 Utilized third-party sources such as Bootcamp Teaching Assistants, Stack Overflow, and GitHub at [https://coding-boot-camp.github.io/full-stack/github/](https://coding-boot-camp.github.io/full-stack/github/)
@@ -27,5 +24,4 @@ Utilized third-party sources such as Bootcamp Teaching Assistants, Stack Overflo
 n/a
 
 ## Tests
-
-"echo \"Error: no test specified\" && exit 1"
+No test specified
