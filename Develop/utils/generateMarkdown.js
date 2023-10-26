@@ -41,6 +41,7 @@ function generateMarkdown(answers) {
   ${answers.tests || "No test information provided."}
   
   ## Questions
+  Please feel free to reach out to me with any questions regarding the README Generator project
   GitHub: [${answers.username}](https://github.com/${answers.username})
   Email: ${answers.email}
     `;
