@@ -22,7 +22,7 @@ function generateMarkdown(answers) {
   ${answers.description}
   
   ## Table of Contents
-  [${answers.tableOfContents.join("\n")}]${tocSelection}
+  [${answers.tableOfContents.join("\n")}] ${tocSelection}
   
   ## Installation
   ${answers.installation || "No installation instructions provided."}
