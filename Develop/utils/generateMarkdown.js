@@ -7,12 +7,11 @@ const {
 
 //generate markdown for README file using required licene data and answers from inquirer prompt
 function generateMarkdown(answers) {
-  function generateMarkdown(answers) {
-    const licenseBadge = renderLicenseBadge(answers.license);
-    const licenseLink = renderLicenseLink(answers.license);
-    const licenseSection = renderLicenseSection(answers.license);
+  const licenseBadge = renderLicenseBadge(answers.license);
+  const licenseLink = renderLicenseLink(answers.license);
+  const licenseSection = renderLicenseSection(answers.license);
 
-    return `# ${answers.title}
+  return `# ${answers.title}
   
   ${licenseBadge} ${licenseLink}
 
@@ -42,6 +41,5 @@ function generateMarkdown(answers) {
   GitHub: [${answers.username}](https://github.com/${answers.username})
   Email: ${answers.email}
     `;
-  }
 }
 module.exports = generateMarkdown;

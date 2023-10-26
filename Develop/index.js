@@ -12,7 +12,6 @@ const questions = [
     validate: function (input) {
       return input !== '' ? true : 'Title cannot be empty';
     },
-  
   },
   {
     type: "input",
@@ -21,23 +20,21 @@ const questions = [
     validate: function (input) {
       return input !== '' ? true : 'Description cannot be empty';
     },
-    
   },
   {
     type: "checkbox",
     name: "tableOfContents",
     message:
-      "Please select what you want to include in your README table of contents (optional).",
+      "Please select what you want to include in your README table of contents.",
       validate: function (input) {
-        return input !== '' ? true : 'Select "none" if you do not wish to include a Table of Contents';
+        return input !== '' ? true : 'Must include a Table of Contents';
       },
     choices: [
       "Installation",
       "Usage",
       "License",
       "Contributions",
-      "Test",
-      "None"
+      "Test"
     ]
   },
   {
@@ -62,12 +59,11 @@ const questions = [
     name: "license",
     message: "What licensing is being used?",
     validate: function (input) {
-      return input !== '' ? true : 'Select "none" if you do not wish to include a license';
+      return input !== '' ? true : 'Must include a license';
     },
     choices: [
       "MIT License",
-      "GNU General Public License v3",
-      "None"
+      "GNU General Public License v3"
     ]
   },
   {
@@ -111,7 +107,7 @@ function writeToFile(answers) {
   const markdownContent = generateMarkdown(answers);
   fs.writeFile("README.md", markdownContent, (err) => {
     if (err) {
-      console.error(err);
+      console.error("Error writing to file:", err);
     } else {
       console.log("README created successfully!");
     }
