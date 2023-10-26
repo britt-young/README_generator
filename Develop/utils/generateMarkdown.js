@@ -9,7 +9,7 @@ const renderTableOfContents = require("./tableOfContentsFunction");
 
 //generate markdown for README file using required licene data and answers from inquirer prompt
 function generateMarkdown(answers) {
-  const tocSelection = renderTableOfContents(answer.tableOfContents)
+  const tocSelection = renderTableOfContents(answers.tableOfContents)
   const licenseBadge = renderLicenseBadge(answers.license);
   const licenseLink = renderLicenseLink(answers.license);
   const licenseSection = renderLicenseSection(answers.license);
@@ -22,9 +22,8 @@ function generateMarkdown(answers) {
   ${answers.description}
   
   ## Table of Contents
-  ${answers.tableOfContents.join("\n")}
-  ${tocSelection}
-
+  [${answers.tableOfContents.join("\n")}](#${tocSelection})
+  
   ## Installation
   ${answers.installation || "No installation instructions provided."}
   

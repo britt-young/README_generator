@@ -1,13 +1,13 @@
 function renderTableOfContents(tableOfContents) {
-    if(tableOfContents ===  Installation) {
+    if(tableOfContents ===  "Installation") {
         return "(#installation)";
-    } else if (license === "Usage") {
+    } else if (tableOfContents === "Usage") {
         return "(#usage)";
-      } else if (license === "License") {
+      } else if (tableOfContents === "License") {
         return "(#license)";
-      }else if (license === "Contributions") {
+      }else if (tableOfContents === "Contributions") {
         return "(#contributions)";
-      } else if (license === "Test") {
+      } else if (tableOfContents === "Test") {
         return "(#test)";
       } else {
         // If there is none, return an empty string
